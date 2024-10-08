@@ -1,0 +1,356 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  margin-left: 10px; /* Ajusta el espacio entre la imagen y el texto según sea necesario */
+  margin-right: 10px;
+  font-family:fantasy;
+  font-weight: bold;
+  font-size: 100px;
+  color: #ffffff;
+}
+
+.logo {
+  height: 50px;
+  padding-left: 20px;
+}
+
+.columna {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px; /* Incrementamos el ancho para dar espacio al borde */
+  height: 100vh;
+  background-color: #f1ac16bb;
+  padding-top: 20px;
+
+  /* Utilizamos una sombra para simular el efecto de borde difuminado */
+  box-shadow: 1px 0 10px 1px rgba(255, 153, 0, 0.5);
+  z-index: 999; 
+}
+
+
+
+.links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.links li {
+  padding: 10px;
+  border-bottom: 1px solid #ffffff; /* Agregar un borde inferior */
+  margin-bottom: 9px; 
+}
+
+
+.links li a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Establece una fuente moderna */
+  font-size: 20px; /* Tamaño de fuente */
+  font-weight: 500; /* Grosor de fuente */
+  letter-spacing: 0.5px; /* Espaciado entre letras */
+  transition: color 0.3s;
+}
+
+
+.links li a:hover {
+  color: #f3e8c3e8; /* Cambia el color al pasar el cursor por encima */
+  font-size: 33px;
+}
+
+
+.barra-superior img {
+ position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* Hace que la imagen ocupe todo el ancho de la barra */
+  height: 100%; /* Mantiene la relación de aspecto de la imagen */
+  object-fit: cover; /* Ajusta la imagen para que cubra completamente el contenedor */
+   z-index: 997;
+}
+
+
+.contenido-principal {
+  margin-top: 100px;
+  margin-left: 270px; /* Ajustamos el margen para dar espacio a la columna */
+  margin-right: 50px;
+  padding: 20px;
+  position: relative; /* Asegura que la sección tenga una posición relativa */
+  z-index: 1000; /* Asegura que la sección esté por encima de la barra */
+  /*padding-top: 50px; /* Ajusta el padding superior para dejar espacio para la barra */
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+section {
+  display: none; /* Oculta la sección inicialmente */
+}
+
+
+/* Estilos para la tabla */
+table {
+  width: 100%;
+  border-collapse: collapse; /* Colapsar los bordes de las celdas */
+  margin-top: 0;
+}
+
+/* Estilos para las celdas de la tabla */
+th, td {
+  border: 1px solid #dddddd; /* Agregar un borde a las celdas */
+  padding: 8px; /* Agregar espacio interno a las celdas */
+  text-align: left; /* Alinear el texto a la izquierda en las celdas */
+}
+
+/* Estilos para las celdas del encabezado de la tabla */
+th {
+  background-color: #f2f2f2; /* Color de fondo para las celdas del encabezado */
+  font-weight: bold; /* Hacer el texto del encabezado en negrita */
+  text-align: center;
+}
+
+/* Estilos para las filas impares de la tabla */
+tr:nth-child(odd) {
+  background-color: #f9f9f9; /* Color de fondo para las filas impares */
+}
+
+/* Estilos para los botones dentro de la tabla */
+table button {
+  padding: 5px 10px; /* Agregar espacio interno a los botones */
+  border: none; /* Quitar el borde de los botones */
+  cursor: pointer; /* Cambiar el cursor al pasar por encima de los botones */
+  background-color: #3d7a31; /* Color de fondo para los botones */
+  color: white; /* Color de texto para los botones */
+  border-radius: 5px; /* Agregar bordes redondeados a los botones */
+  margin-bottom: 10px;
+  
+}
+
+/* Estilos para los botones cuando se pasa el cursor sobre ellos */
+table button:hover {
+  background-color: #45a049; /* Cambiar el color de fondo al pasar el cursor */
+}
+
+/* Estilos para las celdas que contienen botones */
+td button {
+  text-align: center; /* Centrar el contenido de las celdas */
+}
+
+#btn_agregar {
+  background-color: #3d7a31; /* Color de fondo */
+  color: white; /* Color del texto */
+  padding: 10px 20px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de la fuente */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Radio del borde */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+   margin-left: auto; /* Esto empujará el botón hacia la derecha */
+  margin-bottom: 10px;
+  margin-top: 35px;
+  vertical-align: top; 
+  
+}
+
+
+
+#btn_agregar:hover {
+  background-color: #45a049; /* Cambio de color al pasar el mouse sobre el botón */
+}
+
+#btn_modificar{
+    background-color: #3d7a31; /* Color de fondo */
+  color: white; /* Color del texto */
+  padding: 10px 20px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de la fuente */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Radio del borde */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+   margin-right: auto; /* Esto empujará el botón hacia la derecha */
+  margin-bottom: 10px;
+  margin-top: 35px;
+  vertical-align: top; 
+  text-align: right;
+    float: right;
+    
+}
+
+#btn_modificar:hover {
+  background-color: #45a049; /* Cambio de color al pasar el mouse sobre el botón */
+}
+
+#btn_cancelar{
+    background-color: #3d7a31; /* Color de fondo */
+  color: white; /* Color del texto */
+  padding: 10px 20px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de la fuente */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Radio del borde */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+   margin-right: 5px; /* Esto empujará el botón hacia la derecha */
+  margin-bottom: 10px;
+  margin-top: 35px;
+  vertical-align: top; 
+  text-align: right;
+    float: right;
+    
+}
+
+#btn_cancelar:hover {
+  background-color: #45a049; /* Cambio de color al pasar el mouse sobre el botón */
+}
+
+.titulo-y-botones {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  
+}
+
+  
+
+
+.titulo-Inventario{
+font-size: 3em;
+margin-top: 55px;
+margin-bottom: 15px;
+}
+
+#menu-plantilla {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+}
+
+#menu-plantilla h2 {
+    margin-bottom: 40px;
+    font-size: 1.5em;
+}
+
+#menu-plantilla .form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+#menu-plantilla label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#menu-plantilla input[type="text"],
+#menu-plantilla input[type="number"],
+#menu-plantilla textarea,
+#menu-plantilla select {
+    width: calc(100% - 10px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+#menu-plantilla input[type="file"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+    background-color: #fff;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 28px;
+}
+
+
+#menu-plantilla .form-group {
+    width: 48%;
+}
+
+#menu-plantilla button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#menu-plantilla button:hover {
+    background-color: #45a049;
+}
+
+.categoriaS {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+}
+
+.categoriaS h2 {
+    
+    font-size: 1.5em;
+    margin-top: 35px;
+}
+
+.categoriaS input[type="text"] {
+    flex: 1;
+    margin: 0 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.categoriaS button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.categoriaS button:hover {
+    background-color: #45a049;
+}
+
+
+.categoria {
+            margin-bottom: 30px;
+        }
+        .categoria h2 {
+            background-color: #f0f0f0;
+            padding: 10px;
+        }
+        .platillo {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .platillo img {
+            max-width: 100px;
+            margin-right: 20px;
+        }
+        .platillo .info {
+            max-width: calc(100% - 120px);
+        }

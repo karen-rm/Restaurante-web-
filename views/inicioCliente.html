@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/styleInicioCliente.css">
+   <script type="text/javascript" src="../js/jquery.js"></script>
+  <script type="text/javascript" src="../js/inicioCliente.js"></script>
+  <title>Home</title>
+</head>
+<body>
+
+  <nav class="menu">
+    <h1>East Zone</h1>
+    <ul>
+
+      <li><a href="#">Pedidos</a></li>
+    </ul>
+    <h3>Sabores auténticos, experiencias inolvidables</h3>
+  </nav>
+
+  <aside class="columna">
+    <h3>Contacto</h3>
+    <address>
+      Paseo Opera 9, Lomas de Angelópolis, 72830 San Andrés Cholula, Pue., México
+    </address>
+
+    <h3>Horarios de Apertura y Cierre</h3>
+    <ul class="horarios">
+      <li><span>Lunes:</span> 09:00 - 23:00</li>
+      <li><span>Martes:</span> 09:00 - 23:00</li>
+      <li><span>Miércoles:</span> 09:00 - 23:00</li>
+      <li><span>Jueves:</span> 09:00 - 23:00</li>
+      <li><span>Viernes:</span> 09:00 - 23:00</li>
+      <li><span>Sábado:</span> 09:00 - 23:00</li>
+      <li><span>Domingo:</span> 09:00 - 17:00</li>
+    </ul>
+
+  </aside>
+
+<section>
+   <h1 class="titulo">Menú</h1>
+  <div id="Menu"></div>
+</section>
+
+  <div id="cart-bar">
+    <div class="dosColumnas">
+      <h3>Tu Pedido</h3>
+      <img src="../img/carrito2.png">
+    </div>
+      <ul id="cart-items">
+        <!-- Items del carrito se añadirán aquí -->
+      </ul>
+      <p id="total">Total: $0.00</p>
+      <button onclick="pagar()">Pagar</button>
+  </div>
+
+  <div id="cart-bar2">
+      <h3 id="nombrePlatillo"> <!-- Nombre del platillo se añadirá aquí --></h3>
+      <p id="precio"></p>
+      <p class="parrafo">¿Que extras te ponemos?</p>
+      <ul >
+        <!-- los extras obtenidos con sus precios extras -->
+      </ul>
+
+       <div class="ingredientes">
+        <!-- los nombres de ingredientes -->
+
+      </div>
+
+
+
+  </div>
+
+
+</body>
+</html>

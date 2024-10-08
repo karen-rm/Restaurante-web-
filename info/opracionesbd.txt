@@ -1,0 +1,125 @@
+INSERT INTO administrador (usuario, contraseña) VALUES ('nombre_usuario', 'contraseña');
+
+use restaurante1;
+-- Insertando ingredientes para la familia "Especies"
+INSERT INTO Ingrediente (nombre, id_familia, unidad, cantidad, costo_unidad) VALUES
+('Pimienta negra', 1, 'KG', 5, 15.05),
+('Orégano', 1, 'KG', 6, 8.03),
+('Cúrcuma', 1, 'KG', 8, 5.07);
+
+-- Insertando ingredientes para la familia "Vino"
+INSERT INTO Ingrediente (nombre, id_familia, unidad, cantidad, costo_unidad) VALUES
+('Vino tinto', 2, 'BOT 0.75L', 20, 750),
+('Vino blanco', 2, 'BOT 1L', 10, 750),
+('Vino rosado', 2, 'BOT 1L', 15, 1750);
+
+-- Insertando ingredientes para la familia "Aceites"
+INSERT INTO Ingrediente (nombre, id_familia, unidad, cantidad, costo_unidad) VALUES
+('Aceite de oliva virgen extra', 3, 'ENV 3L', 15, 287.99),
+('Aceite de girasol', 3, 'ENV 3L', 10, 421.36),
+('Aceite de coco', 3, 'ENV 3L', 8, 368.9);
+
+-- Insertando ingredientes para la familia "Lácteos"
+INSERT INTO Ingrediente (nombre, id_familia, unidad, cantidad, costo_unidad) VALUES
+('Leche entera', 4, 'BOT 1L', 10, 13.65),
+('Queso parmesano', 4, 'KG', 5, 31.5),
+('Crema fresca', 4, 'ENV 1L', 10, 29.48);
+
+-- Insertando ingredientes para la familia "Carnes"
+INSERT INTO Ingrediente (nombre, id_familia, unidad, cantidad, costo_unidad) VALUES
+('Filete de ternera', 5, 'KG', 6, 100.36),
+('Pechuga de pollo', 5, 'KG', 9, 84.6),
+('Chorizo', 5, 'KG', 9, 69.36);
+
+-- Insertando ingredientes para la familia "Vegetales"
+INSERT INTO Ingrediente (nombre, id_familia, unidad, cantidad, costo_unidad) VALUES
+('Tomate', 6, 'KG', 3, 22.6),
+('Espinacas', 6, 'KG', 2, 10.1),
+('Zanahoria', 6, 'KG', 2, 12.3);
+
+-- Insertando ingredientes para la familia "Frutas"
+INSERT INTO Ingrediente (nombre, id_familia, unidad, cantidad, costo_unidad) VALUES
+('Manzana', 7, 'KG', 2, 17.63),
+('Plátano', 7, 'KG', 1, 20.15),
+('Fresas', 7, 'KG', 2, 50.26);
+
+-- Insertando ingredientes para la familia "Pescados y Mariscos"
+INSERT INTO Ingrediente (nombre, id_familia, unidad, cantidad, costo_unidad) VALUES
+('Salmón', 8, 'kG', 2, 400.63),
+('Camarones', 8, 'KG', 4, 215.36),
+('Calamar', 8, 'KG', 3, 200.5);
+
+-- Insertando ingredientes para la familia "Harinas y Cereales"
+INSERT INTO Ingrediente (nombre, id_familia, unidad, cantidad, costo_unidad) VALUES
+('Harina de trigo', 9, 'KG', 5, 20.63),
+('Arroz', 9, 'KG', 6, 13.5),
+('Avena', 9, 'KG', 7.5, 8.6);
+
+
+INSERT INTO Recepcionista (usuario, contraseña) VALUES 
+    ('recep01', '123recep'),
+    ('recep02', '456recep');
+-----------------------------------------------------------
+use restaurante1;
+ALTER TABLE cliente
+ADD COLUMN contraseña VARCHAR(255) NOT NULL;
+
+select * from cliente;
+----------------------------------------------------------
+use restaurante1;
+UPDATE cliente
+SET contraseña = '123ak'
+WHERE id_cliente = 1;
+select * from cliente;
+-------------------------------------------
+-- Crear platillos para cada categoría
+INSERT INTO Platillo (id_platillo, nombre, descripcion, precio, disponibilidad, id_categoria, imagen_path) VALUES
+(1, 'Desayuno Americano', 'Un delicioso desayuno con huevos, bacon, y pan tostado.', 120.00, 1, 1, '../uploads/desayunoAmericano.jpg'),
+(2, 'Ensalada Cesar', 'Ensalada con lechuga, croutones y aderezo cesar.', 80.00, 1, 2, '../uploads/ensalada.jpg'),
+(3, 'Limonada', 'Bebida refrescante de limón.', 30.00, 1, 3, '../uploads/limonada.jpg'),
+(4, 'Pastel de Chocolate', 'Postre delicioso con capas de chocolate.', 150.00, 1, 4, '../uploads/pastel.jpg'),
+(5, 'Filete de Ternera', 'Jugoso filete de ternera con guarnición.', 250.00, 1, 5, '../uploads/filete.jpg');
+
+-----------------------------------------------------
+-- Agregar extras para cada platillo
+INSERT INTO Platillo_Extras (id_extra, nombre, precio_adicional, id_platillo, disponibilidad) VALUES
+-- Desayuno Completo
+(1, 'Tocino extra', 20.00, 1, 1),
+(2, 'Queso adicional', 15.00, 1, 1),
+-- Ensalada Cesar
+(3, 'Pollo a la parrilla', 30.00, 2, 1),
+(4, 'Aguacate', 25.00, 2, 1),
+-- Limonada
+(5, 'Menta', 5.00, 3, 1),
+(6, 'Hielo extra', 3.00, 3, 1),
+-- Pastel de Chocolate
+(7, 'Helado de vainilla', 20.00, 4, 1),
+(8, 'Frutas', 25.00, 4, 1),
+-- Filete de Ternera
+(9, 'Papas fritas', 30.00, 5, 1),
+(10, 'Ensalada a la carta', 25.00, 5, 1);
+----------------------------------------------------------------------------------
+-- Asignar ingredientes a cada platillo
+INSERT INTO Platillo_Detalle (id_detalle, id_platillo, id_ingrediente, disponibilidad) VALUES
+-- Desayuno Completo
+(1, 1, 13, 1), -- Filete de ternera
+(2, 1, 10, 1), -- Leche entera
+-- Ensalada Cesar
+(3, 2, 17, 1), -- Espinacas
+(4, 2, 16, 1), -- Tomate
+-- Limonada
+(5, 3, 19, 1), -- Manzana
+-- Pastel de Chocolate
+(6, 4, 25, 1), -- Harina de trigo
+(7, 4, 10, 1), -- Leche entera
+-- Filete de Ternera
+(8, 5, 13, 1), -- Filete de ternera
+(9, 5, 24, 1); -- Calamar (Guarnición)
+-----------------------------------------------------------------
+INSERT INTO Platillo_Detalle (id_detalle, id_platillo, id_ingrediente, disponibilidad) VALUES
+-- Ensalada Cesar
+(1, 2, 14, 1), -- Pechuga de pollo
+(2, 2, 47, 1), -- Croutons
+(3, 2,  7, 1), -- Aceite de oliva 
+(4, 2, 45, 1), -- salsa tal 
+(5, 2,  46, 1); -- anchoas

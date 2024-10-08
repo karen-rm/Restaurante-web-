@@ -1,0 +1,85 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Sección de tarjeta de crédito, oculta inicialmente */
+#tarjeta-section {
+    display: none;
+}
+
+/* Mostrar la sección de tarjeta de crédito cuando se selecciona la opción de pago con tarjeta */
+input[type="radio"][name="tipo_pago"]:checked + #tarjeta-section {
+    display: block;
+}
+
+.pedido-item {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.pedido-item-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.pedido-item-body {
+    padding: 10px 0;
+}
+
+#total {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 20px;
+}

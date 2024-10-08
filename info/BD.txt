@@ -1,0 +1,82 @@
+Tabla Mesa :			
+Capacidad de personas 
+Estado  
+Ubicación 	
+Id_mesero
+
+Platillo				
+Nombre  	
+Descripción  	
+Precio 
+Disponibilidad	
+Categoría 
+
+Ingrediente 				
+Nombre  	
+Familia 	
+Unidad 
+Cantidad
+Coste Unidad
+Valor inventario
+
+
+Comanda  			
+Id_platillo	
+Cantidad 	
+Total 	
+Fecha  	
+# de comensales	
+id mesa	
+comentario	
+adicionales
+
+
+Mesero		
+Nombre	
+Apellido	
+Telefono
+Usuario 
+Contraseña 
+
+
+Reserva 				
+id reserva   	
+id_cliente	
+fecha 	
+Hora 	
+# de personas 	
+Id_mesa
+
+Cliente 				
+id cliente    	
+Nombre 	
+Apellido	
+Telefono	
+Correo	
+Id dirección 
+
+Dirección 				
+Calle     	
+Número exterior	
+Número interior 	
+Referencia 	
+Colonia 	
+Codigo Postal  
+
+Tabla Administrador  
+Usuario  	
+Contraseña   
+
+
+Tabla pedido_a_domicilio	
+Id_comanda 	
+Id_cliente	
+Id_direccion
+
+
+Tabla Pago  				
+id pago  	
+id comnada	
+fecha pago  	
+monto  
+tipo pago  

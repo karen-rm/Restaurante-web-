@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style_loginAdmin.css">
+  <script type="text/javascript" src="../js/jquery.js"></script>
+  <script type="text/javascript" src="../js/login.js"></script>
+  <title>Inicio sesión</title>
+</head>
+<body>
+
+  <div class="overlay">
+    <div class="card">
+      <h2>Inicio de Sesión</h2>
+      <form action="../controllers/verificarCredenciales.php" method="post" id="formulario">
+        <div class="form-row">
+          <label for="tipo_usuario">Empleado:</label>
+          <select id="tipo_usuario" name="tipo_usuario">
+            <option value="default">Seleccione su rango</option>
+            <option value="administrativo">Administrativo</option>
+            <option value="mesero">Camarero</option>
+            <option value="recepcionista">Agente de recepción</option>
+          </select>
+        </div>
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" name="usuario">
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" id="contraseña" name="contraseña">
+        <button type="button" id="btn_aceptar">Aceptar</button>
+     </form>
+    </div>
+  </div>
+</body>
+</html>

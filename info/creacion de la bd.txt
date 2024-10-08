@@ -1,0 +1,169 @@
+--CREATE DATABASE restaurante1; 
+USE restaurante1; 
+
+-- Creación de la tabla Mesero
+--CREATE TABLE Mesero (
+--    id_mesero INT PRIMARY KEY,
+--    nombre VARCHAR(50),
+--    apellido VARCHAR(50),
+--    usuario VARCHAR(50),
+--    contraseña VARCHAR(50)
+--);
+
+-- Creación de la tabla Mesa
+--CREATE TABLE Mesa (
+--    id_mesa INT PRIMARY KEY,
+--    capacidad INT,
+--    estado VARCHAR(50),
+--    ubicacion VARCHAR(50),
+--    id_mesero INT,
+--    FOREIGN KEY (id_mesero) REFERENCES Mesero(id_mesero)
+--);
+
+---- Creación de la tabla Categoria
+--CREATE TABLE Categoria (
+--    id_categoria INT PRIMARY KEY,
+--    nombre VARCHAR(50)
+--);
+
+-- Creación de la tabla Platillo
+--CREATE TABLE Platillo (
+--    id_platillo INT PRIMARY KEY,
+--    nombre VARCHAR(100),
+--    descripcion TEXT,
+--    precio DECIMAL(10, 2),
+--    disponibilidad BIT, -- Utilizamos BIT en lugar de BOOLEAN
+--    id_categoria INT,
+--    FOREIGN KEY (id_categoria) REFERENCES Categoria(id_categoria)
+--);
+
+
+
+
+-- Creación de la tabla Platillo_Extras
+--CREATE TABLE Platillo_Extras (
+--    id_extra INT PRIMARY KEY,
+--    nombre VARCHAR(100),
+--    precio_adicional DECIMAL(10, 2),
+--    id_platillo INT,
+--    disponibilidad BIT,
+--    FOREIGN KEY (id_platillo) REFERENCES Platillo(id_platillo)
+--);
+
+-- Creación de la tabla Familia_Ingrediente
+--CREATE TABLE Familia_Ingrediente (
+--    id_familia INT PRIMARY KEY,
+--    nombre VARCHAR(100)
+--);
+
+-- Creación de la tabla Ingrediente
+--CREATE TABLE Ingrediente (
+--    id_ingrediente INT PRIMARY KEY,
+--    nombre VARCHAR(100),
+--    id_familia INT, -- Cambiamos "familia" por "id_familia"
+--    unidad VARCHAR(50),
+--    cantidad DECIMAL(10, 2),
+--    costo_unidad DECIMAL(10, 2),
+--    FOREIGN KEY (id_familia) REFERENCES Familia_Ingrediente(id_familia) -- Agregamos la clave foránea
+--);
+
+
+-- Creación de la tabla Platillo_Detalle
+--CREATE TABLE Platillo_Detalle (
+--    id_detalle INT PRIMARY KEY,
+--    id_platillo INT,
+--    id_ingrediente INT,
+--    disponibilidad BIT,
+--    FOREIGN KEY (id_platillo) REFERENCES Platillo(id_platillo),
+--    FOREIGN KEY (id_ingrediente) REFERENCES Ingrediente(id_ingrediente)
+--);
+
+-- Creación de la tabla Comanda
+--CREATE TABLE Comanda (
+--    id_comanda INT PRIMARY KEY,
+--    total DECIMAL(10, 2),
+--    numero_de_comensales INT,
+--    id_mesa INT,
+--    comentario TEXT,
+--    FOREIGN KEY (id_mesa) REFERENCES Mesa(id_mesa)
+--);
+
+-- Creación de la tabla Detalle_Comanda
+--CREATE TABLE Detalle_Comanda (
+--    id_detalle_comanda INT PRIMARY KEY,
+--    id_comanda INT, -- Agregamos la clave foránea hacia Comanda
+--    id_platillo INT,
+--    cantidad INT,
+--    total DECIMAL(10, 2),
+--    FOREIGN KEY (id_comanda) REFERENCES Comanda(id_comanda), -- Clave foránea hacia Comanda
+--    FOREIGN KEY (id_platillo) REFERENCES Platillo(id_platillo)
+--);
+
+
+-- Creación de la tabla Direccion
+--CREATE TABLE Direccion (
+--    id_direccion INT PRIMARY KEY,
+--    calle VARCHAR(100),
+--    numero_exterior VARCHAR(20),
+--    numero_interior VARCHAR(20),
+--    referencia TEXT,
+--    colonia VARCHAR(100),
+--    codigo_postal VARCHAR(10)
+--);
+
+-- Creación de la tabla Cliente
+--CREATE TABLE Cliente (
+--    id_cliente INT PRIMARY KEY,
+--    nombre VARCHAR(100),
+--    apellido_paterno VARCHAR(100),
+--    apellido_materno VARCHAR(100),
+--    telefono VARCHAR(20),
+--    correo VARCHAR(100),
+--    id_direccion INT,
+--    FOREIGN KEY (id_direccion) REFERENCES Direccion(id_direccion)
+--);
+
+
+-- Creación de la tabla Reserva
+--CREATE TABLE Reserva (
+--    id_reserva INT PRIMARY KEY,
+--    id_cliente INT,
+--    fecha DATE,
+--    hora TIME,
+--    numero_de_personas INT,
+--    id_mesa INT,
+--    estado VARCHAR(50),
+--    FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente),
+--    FOREIGN KEY (id_mesa) REFERENCES Mesa(id_mesa)
+--);
+
+
+
+-- Creación de la tabla Administrador
+--CREATE TABLE Administrador (
+--    id_administrador INT PRIMARY KEY,
+--    usuario VARCHAR(50),
+--    contraseña VARCHAR(50)
+--);
+
+-- Creación de la tabla Pedido
+--CREATE TABLE Pedido (
+--    id_pedido INT PRIMARY KEY,
+--    fecha DATE,
+--    hora TIME,
+--    estado VARCHAR(50),
+--    id_cliente INT,
+--    id_comanda INT,
+--    FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente),
+--    FOREIGN KEY (id_comanda) REFERENCES Comanda(id_comanda)
+--);
+
+-- Creación de la tabla Pago
+--CREATE TABLE Pago (
+--    id_pago INT PRIMARY KEY,
+--    fecha_pago DATE,
+--    monto DECIMAL(10, 2),
+--    tipo_pago VARCHAR(50),
+--    id_comanda INT,
+--    FOREIGN KEY (id_comanda) REFERENCES Comanda(id_comanda)
+--);

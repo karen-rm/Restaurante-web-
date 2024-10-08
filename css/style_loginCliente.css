@@ -1,0 +1,131 @@
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+h1{
+  font-family: fantasy;
+  font-size: 2em;
+  margin-bottom: 0px;
+}
+
+.cambioFormulario{
+margin-top: 0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/rrrrrrr.jpg'); /* Ruta de la imagen que deseas usar como fondo */
+  /*background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el overlay */
+  background-color: rgba(0, 0, 0, 0.5); /* Color de fondo semi-transparente */
+  background-blend-mode: multiply; /* Mezcla el color de fondo con la imagen */
+  background-position: center; /* Centra la imagen */
+  display: flex;
+  justify-content: center;
+ 
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.89); /* Cambiado el valor alfa a 0.8 para hacerlo menos transparente */
+  padding: 30px; /* Aumentado el relleno interno para que la tarjeta sea un poco más grande */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+  margin: 20px; /* Margen para crear el efecto de flotación */
+  width: 400px; /* Aumentado el ancho de la tarjeta */
+  height: 450px; /* Aumentado el alto de la tarjeta */
+  text-align: center;
+}
+
+
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    margin-bottom: 30px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    
+  }
+  input, select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  
+}
+
+.form-row label {
+  margin-right: 10px;
+  white-space: nowrap;
+  margin-top: -7px;
+}
+
+
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  button {
+    background-color: #eea341;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+   
+  margin-left: auto; /* Alinear el botón a la derecha */
+  margin-right: auto; /* Alinear el botón a la izquierda */
+  display: block; /* Hacer que el botón sea un elemento de bloque */
+  }
+
+  button:hover {
+    background-color: #e6b069;
+  }
+
+a{
+  font-size: small;
+}
+
+.eslogan{
+ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ margin-bottom: 50px;
+}
+
+.botonesJuntos {
+    display: flex;
+    justify-content: space-between; /* Esto coloca los botones al extremo de su contenedor */
+   
+}
+
+.botonesJuntos button {
+    width: 30%; /* Esto hace que cada botón ocupe la mitad del espacio disponible */
+}
+

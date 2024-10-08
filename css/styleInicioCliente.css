@@ -1,0 +1,300 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: 800px 1fr; /* Columnas de tamaño automático */
+  background-image: url("../img/comidaBarra.jpg"); /* Ruta a la imagen de fondo */
+  background-size: cover; /* Ajustar la imagen para cubrir todo el fondo */
+  background-position: center; /* Centrar la imagen */
+  position: fixed; /* Barra fija en la parte superior */
+  width: 100%; /* Ancho completo de la pantalla */
+  top: 0; /* Colocar en la parte superior */
+  z-index: 1000; /* Colocar sobre otros elementos */
+  padding: 30px; /* Espaciado interno */
+  box-shadow: 1px 0 10px 1px rgba(228, 225, 225, 0.5);
+  color: #ffffff; /* Color del texto */
+}
+
+.menu::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  z-index: -1; /* Asegurar que el pseudo-elemento esté detrás del contenido */
+}
+
+.menu h1, .menu lu, .menu li, .menu li a {
+  position: relative;
+  z-index: 1; /* Asegurar que el texto esté encima del pseudo-elemento */
+}
+
+
+
+.menu h1 {
+  font-family: fantasy;
+  font-size: 4em;
+}
+
+.menu ul {
+  margin-right: 0;
+}
+
+.menu li {
+  display: inline-block;
+  list-style: none;
+  padding: 5px;
+  margin-right: 50px;
+  margin-top: 30px;
+}
+
+.menu li a {
+  color: #ffffff;
+  display: block;
+  font-size: 1.5em;
+  text-decoration: none; /* Sin subrayado */
+  text-align: center; /* Centrar texto */
+  font-family:fantasy;
+}
+
+.menu li a:hover {
+  color: rgb(19, 109, 7);
+}
+
+.columna {
+  position: fixed;
+  top: 160px; /* Ajustar para que quede debajo de la barra de navegación */
+  left: 0;
+  width: 250px; /* Incrementamos el ancho para dar espacio al borde */
+  height: calc(100vh - 100px); /* Resta la altura de la barra de navegación */
+  background-color: #f1ac16bb;
+  padding-top: 20px;
+  box-shadow: 1px 0 10px 1px rgba(255, 153, 0, 0.5);
+  z-index: 998; 
+	padding: 10px;
+	text-align: center;
+}
+
+.columna h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  color: #ffffff;
+	margin-top: 20px;
+}
+
+.columna address {
+	margin-top: 20px;
+  font-style: normal;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.columna h3 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #ffffff;
+	margin-top: 20px;
+	font-family: 'Times New Roman', Times, serif;
+	font-style: italic;
+}
+
+.horarios {
+  list-style: none;
+  padding-left: 0;
+}
+
+.horarios li {
+
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.horarios span {
+  font-weight: bold;
+  color: #0a0a0a;
+}
+
+section {
+  margin-left: 280px; /* Ajustar para dejar espacio a la columna */
+  margin-right: 280px;
+  margin-top: 200px; /* Ajusta el valor según el alto de tu barra de navegación */
+  display: flex; /* Usar flexbox para la sección */
+  flex-direction: column; /* Apilar elementos verticalmente */
+  height: 100%; /* Establecer altura de la sección al 100% */ 
+  border-radius: 10%;
+  
+}
+
+.menu h3 {
+  font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.titulo{
+	font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
+	font-size: 3em;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	padding: 5px;
+}
+
+.platillo-img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+}
+
+.categoria h2{
+	background-color: #17740f;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	
+} 
+
+#cart-bar {
+position: fixed;
+  right: 0;
+  top: 50px;
+  width: 300px;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+  border-radius: 10px;
+	margin-top: 120px;
+	
+  max-height: 400px; 
+  overflow-y: auto;
+}
+
+#cart-bar h3 {
+  margin-bottom: 10px;
+}
+
+#cart-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#cart-items li {
+  margin-bottom: 10px;
+}
+
+#total {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#cart-bar2 {
+  position: fixed;
+  right: 0;
+  top: 50px;
+  width: 300px;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+  border-radius: 10px;
+	margin-top: 140px;
+	display: none;
+  max-height: 500px; 
+  overflow-y: auto; /* Agregar scroll vertical cuando sea necesario */
+  /*overflow-y: visible;*/
+}
+
+/* Estilo para el checkbox */
+input[type="checkbox"] {
+    margin-right: 10px;
+     
+}
+
+/* Estilo para el label del ingrediente */
+label {
+    margin-right: 20px;
+   
+}
+
+/* Estilo para el div que contiene el checkbox y el label */
+.ingredientes div {
+    margin-bottom: 10px;
+     
+}
+
+/* Estilo para los botones */
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    z-index: 1;
+}
+
+/* Estilo para el título del platillo en cart-bar2 */
+#cart-bar2 h3 {
+    margin-bottom: 10px;
+}
+
+/* Estilo para la lista de extras en cart-bar2 */
+#cart-bar2 ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilo para los elementos de la lista de extras en cart-bar2 */
+#cart-bar2 ul li {
+    margin-bottom: 5px;
+}
+
+/* Estilo para el div que contiene los ingredientes en cart-bar2 */
+#cart-bar2 .ingredientes {
+    margin-top: 20px;
+}
+
+/* Estilo para los ingredientes en cart-bar2 */
+#cart-bar2 .ingredientes ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilo para los elementos de la lista de ingredientes en cart-bar2 */
+#cart-bar2 .ingredientes ul li {
+    margin-bottom: 2px;
+}
+
+.parrafo{
+ font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 8px;
+}
+
+.dosColumnas{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  img{
+    width: 60px;
+    height: 40px;
+  }
+}
+
+.btn-aumentar {
+    margin-right: 10px; /* Ajusta el valor según sea necesario */
+}
+
+.btn-eliminar {
+    margin-left: 10px; /* Ajusta el valor según sea necesario */
+}
